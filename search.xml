@@ -4,6 +4,26 @@
   
     
     <entry>
+      <title><![CDATA[Spark在Kerberos环境下指定任意用户在yarn上提交任务]]></title>
+      <url>http://flume.cn/2016/09/08/Spark%E5%9C%A8Kerberos%E7%8E%AF%E5%A2%83%E4%B8%8B%E6%8C%87%E5%AE%9A%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E5%9C%A8yarn%E4%B8%8A%E6%8F%90%E4%BA%A4%E4%BB%BB%E5%8A%A1/</url>
+      <content type="html"><![CDATA[<p>众所周知，Spark在Kerberos环境下提交任务有两种方式，分别是先kinit的方式和通过 –keytab的方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[op]$ spark-submit --keytab <span class="built_in">test</span>Jars/op.keytab --principal op --master <span class="built_in">local</span> --class SparkPi ./<span class="built_in">test</span>Jars/my.jar 4</div></pre></td></tr></table></figure>
+<p>Spark在Kerberos环境下可以在提交任务时通过指定用户的keytab和principal来提交任务，比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 事先进行kinit的方式</span></div><div class="line">[op]$ kinit -kt op.keytab op</div><div class="line">[op]$ spark-submit --master <span class="built_in">local</span> --class SparkPi ./<span class="built_in">test</span>Jars/my.jar 4</div><div class="line"></div><div class="line"><span class="comment"># 提交keytab的方式</span></div><div class="line">[op]$ spark-submit --keytab <span class="built_in">test</span>Jars/op.keytab --principal op --master <span class="built_in">local</span> --class SparkPi ./<span class="built_in">test</span>Jars/my.jar 4</div></pre></td></tr></table></figure>
+<p>其实还可以模拟其它用户的方式提交任务，比如使用ts账户提交：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[op]$ spark-submit --keytab <span class="built_in">test</span>Jars/ts.keytab --principal ts@HADOOP.CHINATELECOM.CN --master <span class="built_in">local</span> --class SparkPi ./<span class="built_in">test</span>Jars/my.jar 4</div></pre></td></tr></table></figure>
+<p>当然没有那么简单，如果想要使用ts账户执行程序，需要进行如下设置：</p>
+<h4 id="模拟其它用户需要的条件"><a href="#模拟其它用户需要的条件" class="headerlink" title="模拟其它用户需要的条件"></a>模拟其它用户需要的条件</h4><ol>
+<li>ts要在KDC下生成对应的keytab和principal；</li>
+<li>要在hadoop集群的所有机器上创建ts账户：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo groupadd ts</div><div class="line">sudo useradd -g ts ts</div></pre></td></tr></table></figure>
+<p>值得注意的是，如果要在yarn中模拟其它用户执行，需要在集群中所有机器上增加该用户。</p>
+<p>后期有时间了详细说明原因。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Spark Web与history web配置与测试]]></title>
       <url>http://flume.cn/2016/09/07/Spark-Web%E4%B8%8Ehistory%E6%B5%8B%E8%AF%95/</url>
       <content type="html"><![CDATA[<h2 id="Spark-Web的查看"><a href="#Spark-Web的查看" class="headerlink" title="Spark Web的查看"></a>Spark Web的查看</h2><ol>
