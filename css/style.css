@@ -276,6 +276,69 @@ div {
         word-break: break-all; }
         .post .post-content ul a:hover, .post .post-content ol a:hover {
           text-decoration: underline; }
+  .post .post-content-p {
+    clear: left;
+    font-size: 20px;
+    line-height: 1.77;
+    color: #444;
+    padding-top: 15px;
+    text-align: justify;
+    text-justify: distribute;
+    word-break: normal; }
+    .post .post-content-p h2 {
+      margin: 1.4em 0 1.1em;
+      border-bottom: 1px solid #eee;
+      overflow: hidden; }
+    .post .post-content-p h3 {
+      margin: 1.4em 0 1.1em; }
+    .post .post-content-p pre code {
+      padding: 0 2em; }
+    .post .post-content-p p {
+      margin: 0 0 1.234em; }
+      .post .post-content-p p code {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 0 5px;
+        background: #f7f8f8; }
+      .post .post-content-p p a {
+        color: #01579f;
+        padding-bottom: 2px;
+        word-break: break-all; }
+        .post .post-content-p p a:hover {
+          text-decoration: underline; }
+      .post .post-content-p p .caption {
+        color: #444;
+        display: block;
+        font-size: 0.9em;
+        margin-top: 0.1em;
+        position: relative;
+        text-align: center; }
+    .post .post-content-p hr {
+      margin: 2.4em auto;
+      border: none;
+      border-top: 1px solid #eee;
+      position: relative; }
+    .post .post-content-p img {
+      max-width: 100%;
+      padding: 0.5em 0;
+      margin: auto;
+      display: block; }
+    .post .post-content-p ul, .post .post-content-p ol {
+      border-radius: 3px;
+      margin: 1em 0; }
+      .post .post-content-p ul ul, .post .post-content-p ol ul {
+        margin: 0; }
+      .post .post-content-p ul code, .post .post-content-p ol code {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 0px 5px;
+        background: #f7f8f8; }
+      .post .post-content-p ul a, .post .post-content-p ol a {
+        color: #01579f;
+        padding-bottom: 2px;
+        word-break: break-all; }
+        .post .post-content-p ul a:hover, .post .post-content-p ol a:hover {
+          text-decoration: underline; }
   .post .tags {
     padding-bottom: 1em; }
     .post .tags a {
