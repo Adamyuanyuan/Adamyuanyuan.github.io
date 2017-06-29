@@ -220,6 +220,7 @@ div {
     color: #444;
     padding-top: 15px;
     text-align: justify;
+    font-family: "Microsoft YaHei";
     text-justify: distribute;
     word-break: normal; }
     .post .post-content h2 {
