@@ -38,6 +38,7 @@
 <li>观测好ES集群的状态，一段时间后，ES机器的GC比较高</li>
 <li>最好别一下子跑所有数据，分几批跑，这样就算出问题，只需要重跑那一部分就好了</li>
 </ol>
+<p>数据：通过观察，导入的速度随着时间的增长呈下降趋势，整体来说，ES集群隔离的小集群共有五台物理机，共2.23亿条，751G的数据导入用了约4.5小时，平均速度为 45M/s, 1.38W条/s。</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>感谢 技术交流群里 @叫我老陈行了吧，@岑玉海 等大神网友；</p>
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/transport-client.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/transport-client.html</a><br><a href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/java-docs-bulk.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/java-docs-bulk.html</a></p>
 ]]></content>
@@ -2259,16 +2260,16 @@ Lita开车去的
   
     
     <entry>
+      <title><![CDATA[timeline]]></title>
+      <url>http://flume.cn/timeline/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>http://flume.cn/about/index.html</url>
       <content type="html"><![CDATA[<p>hi，你好</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[timeline]]></title>
-      <url>http://flume.cn/timeline/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
